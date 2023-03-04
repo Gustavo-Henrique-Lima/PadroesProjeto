@@ -9,26 +9,25 @@ public class Snooper {
         this.model = model;
         model.addQueryObserver( new WebSearchModel.QueryObserver() 
         {
-        	FiltrarPalavra filtro=new FiltrarPalavra("friend");
+        	Filter filtro=new FiltrarPalavra("friend");
         	@Override
 			public void onQuery(String query) 
         	{
-        		//filtro.setPalavra("Dia");
 				if (filtro.interessa(query)) 
 				{
-					System.out.println("Oh Yes!"+query);
+					filtro.print(query);
 				}
 			}
         });
         model.addQueryObserver(new WebSearchModel.QueryObserver() 
         {
-        	FiltrarTamanho filtro=new FiltrarTamanho(60);
+        	Filter filtro=new FiltrarTamanho(60);
         	@Override
-			public void onQuery(String frase) 
+			public void onQuery(String query) 
         	{
-				if (filtro.interessa(frase)) 
+				if (filtro.interessa(query)) 
 				{
-					System.out.println("So long..."+frase);
+					filtro.print(query);
 				}
 			}
         });

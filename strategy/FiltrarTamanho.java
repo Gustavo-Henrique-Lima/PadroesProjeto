@@ -22,6 +22,12 @@ public class FiltrarTamanho implements Filter
 	@Override
 	public boolean interessa(String frase) 
 	{
-		return frase.length()>=this.tamanho?true:false;
+		return frase.length()>this.tamanho?true:false;
+	}
+
+	@Override
+	public void print(String frase) 
+	{
+		System.out.println("So long..."+frase);
 	}
 }

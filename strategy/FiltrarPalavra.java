@@ -25,4 +25,11 @@ public class FiltrarPalavra implements Filter
 	{
 		return frase.toLowerCase().contains(this.palavra)?true:false;
 	}
+
+
+	@Override
+	public void print(String frase) 
+	{
+		System.out.println("Oh Yes!"+frase);
+	}
 }

@@ -40,12 +40,15 @@ public class WebSearchModel {
         }
     }
 
-    public void addQueryObserver(QueryObserver queryObserver) {
+    public void addQueryObserver(QueryObserver queryObserver) 
+    {
         observers.add(queryObserver);
     }
 
-    private void notifyAllObservers(String line) {
-        for (QueryObserver obs : observers) {
+    private void notifyAllObservers(String line) 
+    {
+        for (QueryObserver obs : observers) 
+        {
             obs.onQuery(line);
         }
     }
