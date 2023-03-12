@@ -8,17 +8,17 @@ import java.util.Random;
 public class KeyPad 
 {
     private final PhoneModel model;
-    private final Screen screen;
     
-    public KeyPad(PhoneModel model,Screen screen) 
+    public KeyPad(PhoneModel model) 
     {
         this.model = model;
-        this.screen=screen;
     }
     public void simulateKeyPresses(int numKeyPresses) 
     {
+    	Screen screen = new Screen(model);
+    	Screen screen2=new Screen(model);
         final int MAX_DIGIT = 12;
-        screen.addObservador(model);
+        model.addObservador(screen);
         Random rnd = new Random();
         for (int i = 0; i < numKeyPresses; i++) 
         {
@@ -26,9 +26,6 @@ public class KeyPad
             System.out.println("Pressing: " + newDigit);
             model.addDigit(newDigit);
         }
-        if(model.getDigits().size()>8)
-        {
-        	System.out.println(screen.discando(model.getDigits()));
-        }
+        model.addObservador(screen2);
     }
 }

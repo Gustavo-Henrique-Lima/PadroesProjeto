@@ -9,7 +9,7 @@ public class Main {
         // Build the object graph
         PhoneModel model = new PhoneModel();
         Screen screen = new Screen(model);
-        KeyPad keyPad = new KeyPad(model,screen);
+        KeyPad keyPad = new KeyPad(model);
         // Run the program
         keyPad.simulateKeyPresses(NUM_DIGITS);
 	}
