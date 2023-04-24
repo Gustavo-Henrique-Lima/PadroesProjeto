@@ -18,7 +18,11 @@ public class Carroceria implements Pedaco{
 	
 	@Override
 	public double calcularPeso() {
-		// TODO Auto-generated method stub
-		return 0;
+		double total=0;
+		for(Pedaco p:pecas)
+		{
+			total+=p.calcularPeso();
+		}
+		return total;
 	}
 }
